@@ -1,6 +1,6 @@
-module Figher
+module Wizard
   include Role
-  def dexterity
+  def wis
     super + 2
   end
 end

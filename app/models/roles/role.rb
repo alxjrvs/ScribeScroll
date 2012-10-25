@@ -1,3 +1,0 @@
-module Role
-
-end

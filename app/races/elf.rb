@@ -5,22 +5,22 @@ module Elf
     "Medium"
   end
 
-  def intelligence
+  def int
     super + 2
   end
-  def constitution
+  def con
     super - 2
   end
-  def dexterity
+  def dex
     super + 2
   end
   def abilities
 
   end
 
-  def skill_ranks_per_level
-    super + 1
-  end
+  #def skill_ranks_per_level
+    #super + 1
+  #end
   def speed
     "30 Ft. (6 Squares)"
   end
