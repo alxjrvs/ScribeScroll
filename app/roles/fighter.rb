@@ -1,6 +1,5 @@
 module Fighter
   include Role
-  def dex
-    super + 2
-  end
+
+  BASE_ATTACK_BONUS = {:"1" => 1} 
 end

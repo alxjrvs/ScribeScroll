@@ -1,7 +1,10 @@
 class Character < ActiveRecord::Migration
   def change
     create_table :characters do |t|
-     Game::STATS.each do |s|
+      Game::ROLES.each do |r|
+        t.integer "#{r}_levels".downcase.to_sym, :default => 0
+      end
+      Game::STATS.each do |s|
         t.integer  s[1][:short_name].downcase.to_sym, :default => 0
       end
       t.string :roles

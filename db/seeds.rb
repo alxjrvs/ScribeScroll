@@ -10,10 +10,11 @@
 str: Rollr::D6.roll(3),
 cha: Rollr::D6.roll(3),
 wis: Rollr::D6.roll(3),
- int: Rollr::D6.roll(3),
- dex: Rollr::D6.roll(3),
- con: Rollr::D6.roll(3),
- roles: "Fighter, Wizard",
- race: "Elf",
- primary_role: "Fighter"
+int: Rollr::D6.roll(3),
+dex: Rollr::D6.roll(3),
+con: Rollr::D6.roll(3),
+roles: "Fighter",
+fighter_levels: 1,
+race: "Elf",
+primary_role: "Fighter"
 )

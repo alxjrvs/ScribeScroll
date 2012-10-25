@@ -14,17 +14,19 @@
 ActiveRecord::Schema.define(:version => 20121025003034) do
 
   create_table "characters", :force => true do |t|
-    t.integer  "str",          :default => 0
-    t.integer  "dex",          :default => 0
-    t.integer  "con",          :default => 0
-    t.integer  "wis",          :default => 0
-    t.integer  "int",          :default => 0
-    t.integer  "cha",          :default => 0
+    t.integer  "fighter_levels", :default => 0
+    t.integer  "wizard_levels",  :default => 0
+    t.integer  "str",            :default => 0
+    t.integer  "dex",            :default => 0
+    t.integer  "con",            :default => 0
+    t.integer  "wis",            :default => 0
+    t.integer  "int",            :default => 0
+    t.integer  "cha",            :default => 0
     t.string   "roles"
     t.string   "race"
     t.string   "primary_role"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
 end
