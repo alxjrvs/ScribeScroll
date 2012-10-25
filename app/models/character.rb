@@ -3,7 +3,7 @@ class Character < ActiveRecord::Base
   def level
     level = 0
    ActiveRecord::Base::Game::ROLES.each do |r|
-      level += self.send("#{r.downcase}_levels")
+      level += self.send("#{r}_levels")
     end
     #binding.pry
     level
