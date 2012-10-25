@@ -1,5 +1,6 @@
 module Human
-  include Race
+  extend Game
+
   def size
     "Medium"
   end

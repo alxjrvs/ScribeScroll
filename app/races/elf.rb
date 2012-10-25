@@ -1,26 +1,16 @@
 module Elf
-  include Race
+  extend Game
+
+  mod int: +2, con: -2, dex: +2
+
+  def abilities
+
+  end
 
   def size
     "Medium"
   end
 
-  def int
-    super + 2
-  end
-  def con
-    super - 2
-  end
-  def dex
-    super + 2
-  end
-  def abilities
-
-  end
-
-  #def skill_ranks_per_level
-    #super + 1
-  #end
   def speed
     "30 Ft. (6 Squares)"
   end
