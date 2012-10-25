@@ -1,6 +1,6 @@
 module Fighter
   extend Game
-  #mod str: 0
+   #mod str: 0
 
   def self.base_attack_bonus
     {:"1" => +1}
