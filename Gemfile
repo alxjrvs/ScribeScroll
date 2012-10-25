@@ -34,9 +34,8 @@ end
 
 gem 'strong_parameters'
 gem 'devise'
+gem 'rollr'
 gem 'google-analytics-rails'
-gem 'aws-s3'
-gem 'paperclip'
 gem 'thin'
 gem 'nokogiri'
 gem 'heroku'

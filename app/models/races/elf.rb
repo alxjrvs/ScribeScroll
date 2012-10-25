@@ -1,11 +1,21 @@
-module Human
+module Elf
   include Race
+
   def size
     "Medium"
   end
 
-  def level_one_feats
-    super + 1
+  def intelligence
+    super + 2
+  end
+  def constitution
+    super - 2
+  end
+  def dexterity
+    super + 2
+  end
+  def abilities
+
   end
 
   def skill_ranks_per_level
