@@ -18,3 +18,4 @@ fighter_levels: 1,
 race: "Elf",
 primary_role: "Fighter"
 )
+

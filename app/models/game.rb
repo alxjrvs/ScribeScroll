@@ -39,7 +39,7 @@ module Game
   end
 
   def stats
-    @stats
+    {str: 0, dex: 0, con: 0, cha: 0, wis:0, int: 0}.merge!@stats
   end
 
 
