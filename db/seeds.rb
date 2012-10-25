@@ -13,7 +13,7 @@ wis: Rollr::D6.roll(3),
 int: Rollr::D6.roll(3),
 dex: Rollr::D6.roll(3),
 con: Rollr::D6.roll(3),
-roles: "Fighter",
+roles: "Fighter, Wizard",
 fighter_levels: 1,
 race: "Elf",
 primary_role: "Fighter"
