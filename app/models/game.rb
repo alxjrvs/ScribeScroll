@@ -2,7 +2,7 @@ class Game
 
   STATS = {str: {name: "strength", short_name: "STR"}, dex: {name: "dexterity", short_name: "DEX"}, con: {name: "constitution", short_name: "CON"}, wis: {name: "wisdom", short_name: "WIS"}, int: {name: "intellect", short_name: "INT"}, char: {name: "charistma", short_name: "CHA"}}
 
-  SKILLS = {"Acrobatics" => {:name => "Acrobatics", :stat => STATS[:dex]},
+  SKILLS = {:acrobatics => {:name => "Acrobatics", :stat => STATS[:dex]},
   #"Fly",
  #"Ride",
  #"Appraise",
