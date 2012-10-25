@@ -1,18 +1,18 @@
 module Fighter
   extend Game
-   #mod str: 0
 
-  def self.base_attack_bonus
+  def base_attack_bonus
     {:"1" => +1}
   end
 
-  def self.fort_save
+  def fort_save
   end
 
-  def self.ref_save
+  def ref_save
   end
 
-  def self.will_save
+  def will_save
+    #self.primary_role
   end
 
 end
