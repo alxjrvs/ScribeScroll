@@ -1,4 +1,4 @@
-class Game
+module Game
 
   STATS = {str: {name: "strength", short_name: "STR"}, dex: {name: "dexterity", short_name: "DEX"}, con: {name: "constitution", short_name: "CON"}, wis: {name: "wisdom", short_name: "WIS"}, int: {name: "intellect", short_name: "INT"}, cha: {name: "charistma", short_name: "CHA"}}
 
