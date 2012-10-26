@@ -1,0 +1,3 @@
+class ScribescrollController < ApplicationController
+
+end
