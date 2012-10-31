@@ -1,8 +1,8 @@
--#= form_tag(finished_char_path) do
-  -#= label_tag(:name, "Characters Name")
-  -#%input{id: "character_name", name: "character_name", type: "text"}
-  -#%br
-  -#= submit_tag("Make My Character!", :class => 'btn btn-primary')
-= form_for @character do |f|
+= form_for @character, :html => {:class => "form-horizontal"}do |f|
   = f.text_field :name
+  %br
+  = f.select(:race, [['Elf']])
+  %br
+  = f.select(:primary_role, [['Fighter']])
+  %br
   = f.submit 'Save'

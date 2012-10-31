@@ -26,18 +26,18 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+      binding.pry
       #Just for testing purposes
-      @character.update_attributes(:roles => "Fighter", :primary_role => "Fighter", :race => "Elf")
+      @character.update_attributes(:roles => "#{@character.primary_role}")
       Game::STATS.keys.each do |roll|
         @character.update_attributes(roll => Rollr::D6.roll(3))
       end
       @character_sheet = CharacterSheet.new(@character)
-
   end
 
 
   private
   def character_params
-    params.require(:character).permit(:name)
+    params.require(:character).permit(:name, :race, :roles, :primary_role)
   end
 end
