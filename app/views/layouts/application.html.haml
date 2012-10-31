@@ -25,7 +25,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") ScribeScroll
+          %a.brand(href="/") ScribeScroll
           .container.nav-collapse
             %ul.nav
               %li= link_to "Link 1", "/path1"
@@ -35,18 +35,13 @@
     .container-fluid
 
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-        .span9
+        .span2
+        .span8
           = yield
-    
+        .span2
+
       %footer
-        %p &copy; Company 2012
+        %p &copy; TOCKON industries, all rights reserved
     /
       Javascripts
       \==================================================

@@ -1,9 +1,9 @@
 class CharacterSheet
-  attr_reader :character, :stats
-
+  attr_reader :race, :name, :roles, :stats, :level
   def initialize(character)
     @character = character
     @race = @character.race.constantize
+    @name = @character.name
     @roles = @character.roles.split(/,\s*/).map {|role| role.constantize}
     @character.extend(@race)
     @character.extend(@character.primary_role.constantize)
@@ -18,5 +18,4 @@ class CharacterSheet
   @level = @character.level
 
   end
-
 end

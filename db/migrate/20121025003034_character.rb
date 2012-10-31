@@ -10,6 +10,7 @@ class Character < ActiveRecord::Migration
       t.string :roles
       t.string :race
       t.string :primary_role
+      t.string :name
       t.timestamps
     end
   end

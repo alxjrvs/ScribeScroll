@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025003034) do
+ActiveRecord::Schema.define(:version => 20121029213111) do
 
   create_table "characters", :force => true do |t|
     t.integer  "fighter_levels", :default => 0
@@ -25,8 +25,17 @@ ActiveRecord::Schema.define(:version => 20121025003034) do
     t.string   "roles"
     t.string   "race"
     t.string   "primary_role"
+    t.string   "name"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "players", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
