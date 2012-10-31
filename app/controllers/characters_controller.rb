@@ -28,6 +28,9 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
       #Just for testing purposes
       @character.update_attributes(:roles => "Fighter", :primary_role => "Fighter", :race => "Elf")
+      Game::STATS.keys.each do |roll|
+        @character.update_attributes(roll => Rollr::D6.roll(3))
+      end
       @character_sheet = CharacterSheet.new(@character)
 
   end
