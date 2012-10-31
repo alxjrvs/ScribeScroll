@@ -26,9 +26,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
-      binding.pry
       #Just for testing purposes
-      @character.update_attributes(:roles => "#{@character.primary_role}")
       Game::STATS.keys.each do |roll|
         @character.update_attributes(roll => Rollr::D6.roll(3))
       end
