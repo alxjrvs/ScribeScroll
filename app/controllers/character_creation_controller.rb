@@ -11,7 +11,13 @@ class CharacterCreationController < ApplicationController
 
   def update
     @character = Character.find(session[:char])
-    @character.attributes = params[:user]
+    @character.update_attributes(character_params)
     render_wizard @character
+  end
+
+  private
+
+  def character_params
+    params.require(:character).permit(:name, :race, :roles, :primary_role, :str, :con, :dex, :int, :wis, :cha, :con)
   end
 end
