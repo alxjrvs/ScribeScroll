@@ -1,1 +1,16 @@
-race
+%div.tabbalbe
+  %ul.nav.nav-pills
+    %li.active
+      %a{:href => "#elf", :data =>{:toggle => "pill"}}
+        %p Point Buy
+    %li
+      %a{:href => "#human", :data =>{:toggle => "pill"}}
+        %p Roll Randomly
+  %div.pill-content
+    %div.pill-pane.active#buy
+      = render 'abilities_point_buy'
+
+    %div.pill-pane#roll
+      = render 'abilities_roll'
+
+
