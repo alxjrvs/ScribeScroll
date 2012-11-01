@@ -1,6 +1,8 @@
 ScribeScroll::Application.routes.draw do
   resources :players
   resources :characters
+  resources :character_creation
+
   #match "characters/new" => "characters#new", :as => :new_char
   #match 'characters/test' => "characters#finished_char", :as => :finished_char
   # The priority is based upon order of creation:

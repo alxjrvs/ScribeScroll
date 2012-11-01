@@ -32,6 +32,7 @@ group :production do
   gem 'sendgrid'
 end
 
+gem 'wicked'
 gem 'strong_parameters'
 gem 'devise'
 gem 'rollr'

@@ -5,17 +5,20 @@ class CharactersController < ApplicationController
   end
 
   def new
-    @character = Character.new
-    respond_to do |format|
-      format.html # new.html
-      format.json { render json: @character}
-    end
+    @character = Character.create
+    session[:char] = @character.id
+    redirect_to character_creation_index_path
+    #respond_to do |format|
+      #format.html # new.html
+      #format.json { render json: @character}
+    #end
   end
   def create
     @character = Character.create(character_params)
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Player was successfully created.' }
+        params[:char] = @character.id
+        format.html { redirect_to character_creation_path}
         format.json { render json: @character, status: :created, location: @character }
       else
         format.html { render action: "new" }

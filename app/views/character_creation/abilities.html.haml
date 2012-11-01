@@ -1,0 +1,28 @@
+%h1 Stats
+%p Every Character must have a full set of stats. How would you like to calculate them?
+
+%div.tabbalbe
+  %ul.nav.nav-pills
+    %li.active
+      %a{:href => "#buy", :data =>{:toggle => "pill"}}
+        %p Point Buy
+    %li
+      %a{:href => "#roll", :data =>{:toggle => "pill"}}
+        %p Roll Randomly
+  %div.pill-content
+    %div.pill-pane.active#buy
+      %p Point Buy systems are used to allocate points evenly amongst a character's stats, creating a well balanced character.
+
+      = form_for @character, :html => {:class => "form-horizontal"}, url: wizard_path do |f|
+        - Game::STATS.keys.each do |st|
+          %div.control-group
+            = f.label st, :class => "control-label"
+            %div.controls
+              = f.text_field st
+        = f.submit "Choose your Race"
+
+    %div.pill-pane#roll
+      %p Throw caution to the wind, and let the dice fall where they may. Not for the feint of heart, you have an equal chance of creating a completely superior character as you do a completely weak one. Your character's soul rests with fate.
+
+
+
