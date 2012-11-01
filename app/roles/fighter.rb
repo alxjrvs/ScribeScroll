@@ -12,7 +12,6 @@ module Fighter
   end
 
   def will_save
-    #self.primary_role
   end
 
 end

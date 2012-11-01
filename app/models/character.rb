@@ -1,6 +1,7 @@
 class Character < ActiveRecord::Base
   after_create :role_check
     include ActiveModel::ForbiddenAttributesProtection
+    include Role
   def level
     level = 0
    ActiveRecord::Base::Game::ROLES.each do |r|
