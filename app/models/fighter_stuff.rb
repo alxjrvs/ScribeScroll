@@ -1,4 +1,3 @@
-class FighterStuff < ActiveRecord::Base
-  # attr_accessible :title, :body
+class FighterChoice < ActiveRecord::Base
   belongs_to :character
 end

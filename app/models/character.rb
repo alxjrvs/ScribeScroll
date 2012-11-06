@@ -1,7 +1,11 @@
 class Character < ActiveRecord::Base
-  after_create :role_check
+  before_save do 
+    self.roles ||= primary_role
+  end
+
     include ActiveModel::ForbiddenAttributesProtection
-    include Role
+    include RoleRelations
+
   def level
     level = 0
    ActiveRecord::Base::Game::ROLES.each do |r|
@@ -10,12 +14,4 @@ class Character < ActiveRecord::Base
     level
   end
 
-  private
-
-  def role_check
-    if roles.nil?
-      update_attributes(:roles => primary_role)
-    elsif roles.include? primary_role
-    end
-  end
 end

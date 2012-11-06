@@ -1,7 +1,7 @@
 class CharacterCreationController < ApplicationController
   include Wicked::Wizard
 
-  steps :abilities, :race, :role, :name
+  steps :abilities#, :race, :role, :name
   # after role: skills, feats, equipment, other.
 
   def show
@@ -16,6 +16,10 @@ class CharacterCreationController < ApplicationController
   end
 
   private
+
+  def finish_wizard_path
+    character_path(@character)
+  end
 
   def character_params
     params.require(:character).permit(:name, :race, :roles, :primary_role, :str, :con, :dex, :int, :wis, :cha, :con)
