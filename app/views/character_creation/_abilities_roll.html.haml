@@ -5,3 +5,7 @@
   - Game::STATS.keys.each do |st|
     = f.hidden_field st, {:value => Rollr::D6.roll(3), :id => "#{st}_field", :class => "roll_field"}
   = f.submit "Roll 3 D6", :id => "stats_submit"
+= form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
+  - Game::STATS.keys.each do |st|
+    = f.hidden_field st, {:value => Rollr::D6.roll_drop_lowest(5, 2), :id => "#{st}_field", :class => "roll_field"}
+  = f.submit "Roll 5 D6, Drop lowest 2", :id => "stats_submit"
