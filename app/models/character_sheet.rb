@@ -2,8 +2,13 @@ class CharacterSheet
   attr_reader :race, :name, :roles, :stats, :level
   def initialize(character)
     @character = character
-    @race = @character.race.constantize
+    @race = "Elf".constantize
+    #@race = @character.race.constantize
     @name = @character.name
+    #LINES HERE FOR TESTING
+    @character.primary_role = "Fighter"
+    @character.roles = "Fighter"
+    #TO BE DETLETED
     @roles = @character.roles.split(/,\s*/).map {|role| role.constantize}
     @character.extend(@race)
     @character.extend(@character.primary_role.constantize)

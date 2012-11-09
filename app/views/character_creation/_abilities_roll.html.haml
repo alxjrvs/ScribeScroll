@@ -1,2 +1,7 @@
 %p Throw caution to the wind, and let the dice fall where they may. Not for the feint of heart, you have an equal chance of creating a completely superior character as you do a completely weak one. Your character's soul rests with fate.
 
+
+= form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
+  - Game::STATS.keys.each do |st|
+    = f.hidden_field st, {:value => Rollr::D6.roll(3), :id => "#{st}_field", :class => "roll_field"}
+  = f.submit "Roll 3 D6", :id => "stats_submit"
