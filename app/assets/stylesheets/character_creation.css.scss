@@ -1,3 +1,26 @@
 // Place all the styles related to the character_creation controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*.roll-button {*/
+  /*margin: 0 auto;*/
+ /*}*/
+
+h3.subhead {text-align:center;}
+
+#roll_5_d6 {
+  margin-left: 17%;
+ }
+
+#roll_3_d6 {
+  margin-left:19%;
+ }
+
+#roll_1_d20 {
+  margin-left: 18.5%;
+}
+
+hr.subhead {
+  width:75%;
+  margin:10px auto;
+ }

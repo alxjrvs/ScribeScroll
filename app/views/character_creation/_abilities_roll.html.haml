@@ -1,11 +1,24 @@
 %p Throw caution to the wind, and let the dice fall where they may. Not for the feint of heart, you have an equal chance of creating a completely superior character as you do a completely weak one. Your character's soul rests with fate.
 
+.row-fluid
+  .span4.rolling-form
+    %h3.subhead The Old Steady
+    = form_for @character, :html => {:id => "roll_3_d6", :class => "roll-button"}, url: wizard_path do |f|
+      - Game::STATS.keys.each do |st|
+        = f.hidden_field st, {:value => Rollr::D6.roll(3), :id => "#{st}_field", :class => "roll_field"}
+      = f.submit "Roll 3 D6", :id => "roll_3_d6"
 
-= form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
-  - Game::STATS.keys.each do |st|
-    = f.hidden_field st, {:value => Rollr::D6.roll(3), :id => "#{st}_field", :class => "roll_field"}
-  = f.submit "Roll 3 D6", :id => "stats_submit"
-= form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
-  - Game::STATS.keys.each do |st|
-    = f.hidden_field st, {:value => Rollr::D6.roll_drop_lowest(5, 2), :id => "#{st}_field", :class => "roll_field"}
-  = f.submit "Roll 5 D6, Drop lowest 2", :id => "stats_submit"
+  .span4.rolling-form
+    %h3.subhead The Powerlever
+    = form_for @character, :html => {:class => "roll-button", :id => "roll_5_d6_drop_2"}, url: wizard_path do |f|
+      - Game::STATS.keys.each do |st|
+        = f.hidden_field st, {:value => Rollr::D6.roll_drop_lowest(5, 2), :id => "#{st}_field", :class => "roll_field"}
+      = f.submit "Roll 5 D6, Drop lowest 2", :id => "roll_5_d6"
+
+  .span4.rolling-form
+    %h3.subhead The Insane.
+    %hr.subhead
+    = form_for @character, :html => {:class => "roll-button", :id => "roll_1_d20"}, url: wizard_path do |f|
+      - Game::STATS.keys.each do |st|
+        = f.hidden_field st, {:value => Rollr::D20.roll, :id => "#{st}_field", :class => "roll_field"}
+      = f.submit "Roll 1 D20", :id => "roll_1_d20"
