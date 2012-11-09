@@ -3,6 +3,10 @@
 .row-fluid
   .span4.rolling-form
     %h3.subhead The Old Steady
+    %hr.subhead
+    %p You've been around this block before. You don't need flash, bells, whistles, or saftey nets. You want your stats, hot and quick. Lets go, adventurer. There's a world to conquer.
+
+    %p You roll three six-sided die per stat, with a range of 3-18. Youknow what this is. Lets play.
     = form_for @character, :html => {:id => "roll_3_d6", :class => "roll-button"}, url: wizard_path do |f|
       - Game::STATS.keys.each do |st|
         = f.hidden_field st, {:value => Rollr::D6.roll(3), :id => "#{st}_field", :class => "roll_field"}
@@ -10,14 +14,20 @@
 
   .span4.rolling-form
     %h3.subhead The Powerlever
+    %hr.subhead
+    %p You want an edge. Your character is going to cause hell, and you want to prepare her for it. Lets do this.
+
+    %p You roll five six-sided die per stat, and you drop the lowest two die. That gives you a range of 3-18, but your chances are better for something higher. But you already knew that, cowboy.
     = form_for @character, :html => {:class => "roll-button", :id => "roll_5_d6_drop_2"}, url: wizard_path do |f|
       - Game::STATS.keys.each do |st|
         = f.hidden_field st, {:value => Rollr::D6.roll_drop_lowest(5, 2), :id => "#{st}_field", :class => "roll_field"}
       = f.submit "Roll 5 D6, Drop lowest 2", :id => "roll_5_d6"
 
   .span4.rolling-form
-    %h3.subhead The Insane.
+    %h3.subhead The Wildcard
     %hr.subhead
+    %p You've got no fear, and nothing to lose. Who needs safety? Who needs limits? You've got a steely eye, and fate owes you a favor. 
+    %p You get to roll One Twenty-sided Die, and the number is just as likely 1 as it is that all-glorious 20. No one plays it as cool as you, hotshot.
     = form_for @character, :html => {:class => "roll-button", :id => "roll_1_d20"}, url: wizard_path do |f|
       - Game::STATS.keys.each do |st|
         = f.hidden_field st, {:value => Rollr::D20.roll, :id => "#{st}_field", :class => "roll_field"}

@@ -29,10 +29,6 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
-      #Just for testing purposes
-      Game::STATS.keys.each do |roll|
-        @character.update_attributes(roll => Rollr::D6.roll(3))
-      end
       @character_sheet = CharacterSheet.new(@character)
   end
 

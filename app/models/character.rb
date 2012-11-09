@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-  before_save do 
+  before_save do
     self.roles ||= primary_role
   end
 
