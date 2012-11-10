@@ -1,11 +1,11 @@
 // Place all the styles related to the character_creation controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-/*.roll-button {*/
-  /*margin: 0 auto;*/
- /*}*/
-
+@mixin no-select  {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+ }
 h3.subhead {text-align:center;}
 
 #roll_5_d6 {
@@ -25,3 +25,9 @@ hr.subhead {
   margin:10px auto;
  }
 
+.desc_button{
+@include no-select
+ }
+.inc_button {
+@include no-select
+ }
