@@ -1,9 +1,16 @@
 %p Point Buy systems are used to allocate points evenly amongst a character's stats, creating a well balanced character.
 
-= form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
-  - Game::STATS.keys.each do |st|
-    %div.control-group
-      = f.label st, :class => "control-label"
-      %div.controls
-        = f.text_field st, :id => "#{st}_field", :class => "buy_field"
-  = f.submit "Choose your Race", :id => "stats_submit"
+%div.row-fluid
+  %div.buy_form.span6
+    = form_for @character, :html => {:class => "form-horizontal", :id => "point_buy"}, url: wizard_path do |f|
+      - Game::STATS.keys.each do |st|
+        %div.control-group
+          = f.label st, :class => "control-label"
+          %div.controls
+            = f.text_field st, :id => "#{st}_field", :class => "buy_field input-mini", :readonly => "readonly", :placeholder => '.input-mini', :value => 10
+            %btn.inc_button.btn.btn-primary +
+            %btn.desc_button.btn.btn-danger -
+
+      = f.submit "Choose your Race", :id => "stats_submit"
+  %div.point_pool.span6
+    %h1.total 20
