@@ -1,0 +1,7 @@
+%div#human-race.race-box
+  %h1 HUMAN STUFF
+
+  = form_for @character, :html => {:class => "race-button", :id => "choose-human", :disabled => "disabled"}, url: wizard_path do |f|
+    = f.hidden_field :race, {:value => 'Human' }
+    = f.submit "Become a Human"
+

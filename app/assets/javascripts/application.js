@@ -19,6 +19,8 @@ function log(msg) {
         throw new Error(msg);
     }, 0);
 }
+
+// Abilities, AKA, stats
 var PointBuy = 20;
 var statHash = {};
 statHash[7] = 4;
@@ -88,4 +90,21 @@ $('.desc_button').click(function() {
 
     }
   }
+});
+
+// Race
+$('.race-select').click(function(){
+  $(this).parent().parent().find('.race-select').attr('disabled', false)
+  $(this).attr('disabled', 'disabled')
+  $('.race-box').css("display", "none")
+  var id = $(this).attr('id')
+  switch(id)
+    {
+    case 'elf-race-select':
+      $('#elf-race').css("display", "block");
+      break;
+    case 'human-race-select':
+      $('#human-race').css("display", "block");
+      break;
+    }
 });

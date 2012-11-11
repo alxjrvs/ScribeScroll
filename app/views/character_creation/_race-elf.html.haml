@@ -1,0 +1,5 @@
+%div#elf-race.race-box
+  %h1 ELF STUFF
+  = form_for @character, :html => {:class => "race-button", :id => "choose-elf"}, url: wizard_path do |f|
+    = f.hidden_field :race, {:value => 'Elf' }
+    = f.submit "Become an Elf"

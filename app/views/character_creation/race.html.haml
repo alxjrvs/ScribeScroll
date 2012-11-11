@@ -1,16 +1,13 @@
-%div.tabbalbe
-  %ul.nav.nav-pills
-    %li.active
-      %a{:href => "#elf", :data =>{:toggle => "pill"}}
-        %p Point Buy
-    %li
-      %a{:href => "#human", :data =>{:toggle => "pill"}}
-        %p Roll Randomly
-  %div.pill-content
-    %div.pill-pane.active#buy
-      = render 'abilities_point_buy'
-
-    %div.pill-pane#roll
-      = render 'abilities_roll'
-
-
+%div.race-wrapper.row-fluid
+  %div.btn-group.btn-group-vertical.left-race.span2
+    %div#human-race-select.race-select.btn.btn-block
+      %p Human
+    %div#elf-race-select.race-select.btn.btn-block
+      %p Elf
+  %div.race-window.span8
+    =render 'race-boxes'
+  -#%div.btn-group.btn-group-vertical.right-race.span2
+    -#%div#human-race.race-select.btn
+      -#%p Human
+    -#%div.race-select.btn
+      -#%p Elf

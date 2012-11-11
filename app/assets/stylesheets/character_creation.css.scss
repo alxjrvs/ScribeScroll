@@ -1,6 +1,8 @@
 // Place all the styles related to the character_creation controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 'Abilities', a.k.a., 'stats'
 @mixin no-select  {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -31,3 +33,21 @@ hr.subhead {
 .inc_button {
 @include no-select
  }
+
+// Race
+@mixin race {
+  display:none;
+ }
+
+#elf-race, #human-race{ 
+@include race
+ }
+
+.left-race {
+  display:block;
+  float:left;
+}
+.right-race {
+  display:block;
+  float:right;
+}

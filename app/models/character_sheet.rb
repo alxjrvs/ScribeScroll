@@ -2,8 +2,7 @@ class CharacterSheet
   attr_reader :race, :name, :roles, :stats, :level
   def initialize(character)
     @character = character
-    @race = "Elf".constantize
-    #@race = @character.race.constantize
+    @race = @character.race.constantize
     @name = @character.name
     #LINES HERE FOR TESTING
     @character.primary_role = "Fighter"
