@@ -1,5 +1,6 @@
 %p= @character_sheet.name
-%p= "#{@character_sheet.name} is a #{@character_sheet.race} #{@character_sheet.roles.first}"
+%p= "#{@character_sheet.name} is a #{@character_sheet.race} #{@character_sheet.roles}"
+-#%p= "#{@character_sheet.name} is a #{@character_sheet.race} #{@character_sheet.roles.first}"
 
 - Game::STATS.each do |st|
   %p= "#{st[1][:short_name]} = #{@character_sheet.stats[st[0]][:value]}(#{@character_sheet.stats[st[0]][:mod]}) "

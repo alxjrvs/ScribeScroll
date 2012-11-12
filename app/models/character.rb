@@ -1,6 +1,8 @@
 class Character < ActiveRecord::Base
   before_save do
-    self.roles ||= primary_role
+    #puts 'BBBBBUUUUUUUUUUUUUUUH'
+    #self.roles ||= self.primary_role
+    #puts "#{self.roles} IS MY ROLE"
   end
 
     include ActiveModel::ForbiddenAttributesProtection

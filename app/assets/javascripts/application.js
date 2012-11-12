@@ -108,3 +108,20 @@ $('.race-select').click(function(){
       break;
     }
 });
+
+// Role
+$('.role-select').click(function(){
+  $(this).parent().parent().find('.role-select').attr('disabled', false)
+  $(this).attr('disabled', 'disabled')
+  $('.role-box').css("display", "none")
+  var id = $(this).attr('id')
+  switch(id)
+    {
+    case 'fighter-role-select':
+      $('#fighter-role').css("display", "block");
+      break;
+    case 'wizard-role-select':
+      $('#wizard-role').css("display", "block");
+      break;
+    }
+});

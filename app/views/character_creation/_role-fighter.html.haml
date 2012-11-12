@@ -1,0 +1,5 @@
+%div#fighter-role.role-box
+  %h1 FIGHTER STUFF
+  = form_for @character, :html => {:class => "role-button", :id => "choose-fighter"}, url: wizard_path do |f|
+    = f.hidden_field :primary_role, {:value => 'Fighter' }
+    = f.submit "Become a Fighter"

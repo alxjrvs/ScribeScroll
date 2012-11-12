@@ -39,7 +39,7 @@ hr.subhead {
   display:none;
  }
 
-#elf-race, #human-race{ 
+#elf-race, #human-race{
 @include race
  }
 
@@ -48,6 +48,23 @@ hr.subhead {
   float:left;
 }
 .right-race {
+  display:block;
+  float:right;
+}
+// Race
+@mixin role {
+  display:none;
+ }
+
+#fighter-role, #wizard-role{
+@include role
+ }
+
+.left-role {
+  display:block;
+  float:left;
+}
+.right-role {
   display:block;
   float:right;
 }

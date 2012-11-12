@@ -1,7 +1,7 @@
 class CharacterCreationController < ApplicationController
   include Wicked::Wizard
 
-  steps :abilities, :race#, :role, :name
+  steps :abilities, :race, :role#, :name
   # after role: skills, feats, equipment, other.
 
   def show
