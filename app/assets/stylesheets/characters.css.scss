@@ -1,0 +1,29 @@
+// Character Sheet
+
+@mixin soft_border {
+  border:1px solid #333;
+  border-radius:4px;
+}
+
+#character_sheet {
+  @include soft_border
+}
+
+.character_sheet_inner {
+  padding:20px;
+}
+
+.char_info{
+  font-size: 30px;
+}
+
+.char_label {
+  font-size:10px;
+}
+
+.char_block {
+  padding:10px;
+  margin:5px 0 0 0;
+  @include soft_border
+}
+

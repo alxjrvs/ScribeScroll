@@ -1,6 +1,25 @@
-%p= @character_sheet.name
-%p= "#{@character_sheet.name} is a #{@character_sheet.race} #{@character_sheet.roles}"
--#%p= "#{@character_sheet.name} is a #{@character_sheet.race} #{@character_sheet.roles.first}"
-
-- Game::STATS.each do |st|
-  %p= "#{st[1][:short_name]} = #{@character_sheet.stats[st[0]][:value]}(#{@character_sheet.stats[st[0]][:mod]}) "
+%div.row-fluid
+  %div.span12
+    %div#character_sheet
+      %div.character_sheet_inner
+        %div.row-fluid
+          %div.span8
+            %div#char_name.char_block
+              %span.char_label Name
+              %p.char_info
+                =@character_sheet.name
+            %div#char_details.char_block
+              %span.char_label Information
+              %p.char_info
+                = "#{@character_sheet.race} #{@character_sheet.roles}"
+          %div.span4
+            %div#misc_info.char_block
+              %div#photo_box
+              %div#info_box
+        %div.row-fluid
+          %div.span3
+            %div#statblock.char_block
+              %p.char_info
+                Stats
+              - Game::STATS.each do |st|
+                %p= "#{st[1][:short_name]} = #{@character_sheet.stats[st[0]][:value]}(#{@character_sheet.stats[st[0]][:mod]}) "

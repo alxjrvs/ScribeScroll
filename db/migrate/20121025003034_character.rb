@@ -11,6 +11,9 @@ class Character < ActiveRecord::Migration
       t.string :race
       t.string :primary_role
       t.string :name
+      t.string :height
+      t.string :age
+      t.text   :description
       t.timestamps
     end
   end

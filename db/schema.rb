@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(:version => 20121101003707) do
     t.string   "race"
     t.string   "primary_role"
     t.string   "name"
+    t.string   "height"
+    t.string   "age"
+    t.text     "description"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
