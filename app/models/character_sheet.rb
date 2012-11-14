@@ -1,5 +1,5 @@
 class CharacterSheet
-  attr_reader :race, :name, :roles, :stats, :level
+  attr_reader :race, :name, :roles, :stats, :level, :description
   def initialize(character)
     @character = character
     @race = @character.race.constantize
@@ -18,6 +18,6 @@ class CharacterSheet
     end
   #@base_attack_bonus = @character.base_attack_bonus[@character.send("#{@character.primary_role.downcase}_levels").to_s.to_sym]
   @level = @character.level
-
+  @description = @character.description
   end
 end

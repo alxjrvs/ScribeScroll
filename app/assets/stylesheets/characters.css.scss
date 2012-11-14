@@ -18,12 +18,32 @@
 }
 
 .char_label {
-  font-size:10px;
+  font-size:12px;
 }
 
 .char_block {
   padding:10px;
   margin:5px 0 0 0;
+  min-height: 50px;
   @include soft_border
 }
 
+.top_char_info {
+}
+
+#char_photo {
+  width:200px;
+  height:200px;
+  display:block;
+  margin:0 auto;
+}
+
+.char_details {
+  font-size:15px;
+  font-style:italic;
+}
+
+.stat_row {
+  text-align: center;
+  position:relative;
+}

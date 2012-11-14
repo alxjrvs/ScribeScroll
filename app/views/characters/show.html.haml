@@ -2,19 +2,24 @@
   %div.span12
     %div#character_sheet
       %div.character_sheet_inner
-        %div.row-fluid
+        %div.row-fluid.top_char_info
           %div.span8
             %div#char_name.char_block
               %span.char_label Name
               %p.char_info
                 =@character_sheet.name
-            %div#char_details.char_block
+            %div#char_information.char_block
               %span.char_label Information
               %p.char_info
                 = "#{@character_sheet.race} #{@character_sheet.roles}"
+            %div#char_details.char_block
+              %span.char_label Character Details
+              %p.char_details
+                = "#{@character_sheet.description}"
           %div.span4
             %div#misc_info.char_block
               %div#photo_box
+                %img#char_photo{src: "/assets/img-not-available.png"}
               %div#info_box
         %div.row-fluid
           %div.span3
@@ -22,4 +27,7 @@
               %p.char_info
                 Stats
               - Game::STATS.each do |st|
-                %p= "#{st[1][:short_name]} = #{@character_sheet.stats[st[0]][:value]}(#{@character_sheet.stats[st[0]][:mod]}) "
+                %div.row-fluid.stat_row
+                  %span.span4.stat_bit.stat_name= "#{st[1][:short_name]}:"  
+                  %span.span4.stat_bit.stat= "#{@character_sheet.stats[st[0]][:value]}"
+                  %span.span4.stat_bit.mod=  "(#{@character_sheet.stats[st[0]][:mod]}) "
