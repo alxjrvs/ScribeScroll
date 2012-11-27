@@ -45,6 +45,5 @@ module Game
       {str: 0}
     end
   end
-
-
 end
+

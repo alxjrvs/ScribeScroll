@@ -3,10 +3,6 @@ module Elf
 
   mod int: +2, con: -2, dex: +2
 
-  def abilities
-
-  end
-
   def size
     "Medium"
   end
